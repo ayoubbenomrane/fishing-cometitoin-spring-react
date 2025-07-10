@@ -1,4 +1,4 @@
-package com.medianet.fishingCompetiton.dtos;
+package com.medianet.fishingCompetiton.DTOs;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
