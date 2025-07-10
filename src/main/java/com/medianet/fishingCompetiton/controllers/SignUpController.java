@@ -1,7 +1,7 @@
 package com.medianet.fishingCompetiton.controllers;
 
 import com.medianet.fishingCompetiton.DAOs.UserDao;
-import com.medianet.fishingCompetiton.dtos.SignUpDTO;
+import com.medianet.fishingCompetiton.DTOs.SignUpDTO;
 import com.medianet.fishingCompetiton.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
