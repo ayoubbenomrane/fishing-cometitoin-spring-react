@@ -24,7 +24,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @RestController
-public class GreetingsController {
+public class SignInController {
 
     @Autowired
     private JwtUtils jwtUtils;
@@ -44,7 +44,6 @@ public class GreetingsController {
         return "Hello, User!";
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/admin")
     public String adminEndpoint(){
         return "Hello, Admin!";
@@ -55,6 +54,7 @@ public class GreetingsController {
     public ResponseEntity<?> authenticateUser(@RequestBody LoginRequest loginRequest) {
 
         Authentication authentication;
+
         try {
             authentication = authenticationManager
                     .authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));

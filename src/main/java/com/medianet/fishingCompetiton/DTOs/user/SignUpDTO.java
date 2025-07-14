@@ -1,4 +1,4 @@
-package com.medianet.fishingCompetiton.DTOs;
+package com.medianet.fishingCompetiton.DTOs.user;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -19,17 +19,20 @@ public class SignUpDTO {
 
     @NotBlank(message = "Last name is required")
     private String lastName;
+    @NotBlank(message="email is required")
+    private String email;
 
     // === Constructors ===
 
     public SignUpDTO() {
     }
 
-    public SignUpDTO(String phoneNumber, String password, String firstName, String lastName) {
+    public SignUpDTO(String phoneNumber, String password, String firstName, String lastName,String email) {
         this.phoneNumber = phoneNumber;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.email=email;
     }
 
     // === Getters and Setters ===
@@ -64,5 +67,9 @@ public class SignUpDTO {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
     }
 }

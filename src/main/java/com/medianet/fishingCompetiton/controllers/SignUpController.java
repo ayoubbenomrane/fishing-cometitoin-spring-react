@@ -1,7 +1,7 @@
 package com.medianet.fishingCompetiton.controllers;
 
 import com.medianet.fishingCompetiton.DAOs.UserDao;
-import com.medianet.fishingCompetiton.DTOs.SignUpDTO;
+import com.medianet.fishingCompetiton.DTOs.user.SignUpDTO;
 import com.medianet.fishingCompetiton.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -29,6 +29,7 @@ public class SignUpController {
                 signUpDTO.getLastName(),
                 signUpDTO.getPhoneNumber(),
                 null,
+                signUpDTO.getEmail(),
                 passwordEncoder.encode(signUpDTO.getPassword()),
                 PLAYER);
         userDao.save(user);

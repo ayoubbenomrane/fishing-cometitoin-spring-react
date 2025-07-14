@@ -53,7 +53,7 @@ public class SecurityConfig {
         http.authorizeHttpRequests(authorizeRequests ->
                 authorizeRequests.requestMatchers("/hello").permitAll()
                         .requestMatchers("/api/public/**").permitAll()
-                        .anyRequest().authenticated());
+                        .anyRequest().hasRole("ADMIN"));
         http.sessionManagement(
                 session ->
                         session.sessionCreationPolicy(
