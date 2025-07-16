@@ -53,7 +53,8 @@ public class SecurityConfig {
         http.authorizeHttpRequests(authorizeRequests ->
                 authorizeRequests.requestMatchers("/hello").permitAll()
                         .requestMatchers("/api/public/**").permitAll()
-                        .anyRequest().hasRole("ADMIN"));
+                        .requestMatchers("/swagger-ui/**").permitAll()
+                        .anyRequest().permitAll());
         http.sessionManagement(
                 session ->
                         session.sessionCreationPolicy(

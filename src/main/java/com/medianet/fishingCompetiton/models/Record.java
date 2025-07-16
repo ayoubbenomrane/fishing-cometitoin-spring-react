@@ -13,6 +13,10 @@ public class Record {
     private int fishCount;
     @Column(name="total_weight")
     private float totalWeight;
+    @Column(name="is_absent")
+    private boolean isAbsent;
+    @Column(name="is_eliminated")
+    private boolean isEliminated;
 
     private int score;
     private int ranking;
@@ -32,6 +36,8 @@ public class Record {
         this.fishCount=0;
         this.ranking=0;
         this.totalWeight=0;
+        this.isAbsent=false;
+        this.isEliminated=false;
     }
 
     public int getId() {
@@ -88,5 +94,21 @@ public class Record {
 
     public void setRound(Round round) {
         this.round = round;
+    }
+
+    public boolean isEliminated() {
+        return isEliminated;
+    }
+
+    public void setEliminated(boolean eliminated) {
+        isEliminated = eliminated;
+    }
+
+    public boolean isAbsent() {
+        return isAbsent;
+    }
+
+    public void setAbsent(boolean absent) {
+        isAbsent = absent;
     }
 }
